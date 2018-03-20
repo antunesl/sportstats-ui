@@ -24,3 +24,4 @@ For detailed explanation on how things work, checkout the [Nuxt.js docs](https:/
 
  - [Nuxt.js](https://nuxtjs.org/guide)
  - [Bulma](https://bulma.io/documentation/overview/start/)
+ - [SCSS](https://sass-lang.com/guide)
