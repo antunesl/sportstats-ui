@@ -18,3 +18,9 @@ $ npm run generate
 ```
 
 For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
+
+
+## Documentation
+
+ - [Nuxt.js](https://nuxtjs.org/guide)
+ - [Bulma](https://bulma.io/documentation/overview/start/)
