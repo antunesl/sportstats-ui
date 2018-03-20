@@ -23,7 +23,7 @@
     <br/>
     <section>
         <div>
-            <h4>Standings</h4>
+            <h1>Standings</h1>
             <ul>
                 <li v-for="standing in standings" :key="standing.position">
                     {{standing.position}} {{standing.teamName}} [{{standing.points}} pts]

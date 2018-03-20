@@ -1,16 +1,32 @@
 <template>
   <div v-if="hasData == true">
     <section class="container">
-        <div>
-        <h1>{{title}}</h1>
-        <h4>{{teamInfo.city}}</h4>
-        <br/>
-        <h5>Manager: {{teamInfo.manager}}</h5>
+        <div class="column is-8 is-offset-2">
+            <h1 class="title is-1">{{title}}</h1>
+            <p class="subtitle is-3">{{teamInfo.city}}</p>
+            <br/>
+            <h5>Manager: {{teamInfo.manager}}</h5>
         </div>
     </section>
     <section>
-        <div>
-            <h4>Squad</h4>
+        <div class="column is-8 is-offset-2">
+            <h4 class="title is-4 has-text-centered">Squad</h4>
+                   <table class="table is-fullwidth">
+                        <thead>
+                        <tr>
+                            <th>Number</th>
+                            <th>Name</th>
+                            <th>Position</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr v-for="player in squad" :key="player.name">
+                            <td >{{player.number}}</td>
+                            <td>{{player.name}}</td>
+                            <td>{{player.position}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
             <ul>
                 <li v-for="player in squad" :key="player.name">
                     {{player.number}} {{player.name}} [{{player.position}}]
@@ -18,6 +34,7 @@
             </ul>
         </div>
     </section>
+
     <hr />
     <section>
         <div>
@@ -114,6 +131,7 @@ export default {
           }
         }
       };
+      
 
       return doc;
     });
@@ -126,7 +144,9 @@ export default {
 </script>
 
 <style>
-
+body{
+    background-color: #f7f7f7;
+}
 
 
 </style>
