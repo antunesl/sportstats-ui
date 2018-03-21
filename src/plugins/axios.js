@@ -8,7 +8,7 @@ if (process.server) {
   // if (!apiKeyValue)
   //   throw Error('ApiKey is not defined in configuration.');
   
-  options.baseURL = `http://wigserver.myvnc.com:3000/api/`;
+  options.baseURL = `http://server:3000/api/`;
   // options.headers = { 'api_key': apiKeyValue };
 }
 
