@@ -203,13 +203,7 @@ export default {
 </script>
 
 <style>
-.titlesLine{
-    width: 100%;
-    height: 10px;
-    background-color: aquamarine;
-    margin-bottom: 30px;
-    margin-top: -10px !important;
-}
+
 
 
 </style>
