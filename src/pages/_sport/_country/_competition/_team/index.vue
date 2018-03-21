@@ -145,11 +145,13 @@
 
 import AppLogo from "~/components/AppLogo.vue";
 import axios from "~/plugins/axios";
+import Tabs from "~/components/Tab.vue";
 
 
 export default {  
   components: {
     AppLogo,
+    Tabs,
   },
   asyncData(context) {
     var country = context.params.country;
