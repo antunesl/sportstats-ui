@@ -54,6 +54,25 @@
                     </tbody>
                 </table>
         </section>
+        <section>
+<div id="root" class="container">
+  <tabs>
+    <tab name="About Us" :selected="true">
+      <h1>This part is about us
+      </h1>
+    </tab>
+    <tab name="About our culture">
+      <h1>This part is about our culture
+      </h1>
+    </tab>
+    <tab name="About our vision">
+      <h1>This part is about our vision
+      </h1>
+    </tab>
+  </tabs>
+</div>
+
+        </section>
 
     </div>
       </div>
@@ -125,9 +144,10 @@
 import AppLogo from "~/components/AppLogo.vue";
 import axios from "~/plugins/axios";
 
+
 export default {
   components: {
-    AppLogo
+    AppLogo,
   },
   asyncData(context) {
     var country = context.params.country;
@@ -176,6 +196,10 @@ export default {
     return true;
   }
 };
+
+
+
+
 </script>
 
 <style>
@@ -186,5 +210,6 @@ export default {
     margin-bottom: 30px;
     margin-top: -10px !important;
 }
+
 
 </style>

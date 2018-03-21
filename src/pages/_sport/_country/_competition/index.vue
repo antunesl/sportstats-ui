@@ -1,18 +1,53 @@
 <template>
-  <div>
-    <section class="container">
-        <div>
+  <div class="row">
+    <div class="column is-8 is-offset-2">
+      <div>
+        <h3 class="title is-4">{{sport}}</h3>
         <div class="title">{{title}}</div>
         <div class="subtitle">{{country}}</div>
-        <h3>{{sport}}</h3>
+        <progress class="progress is-success" value="60" max="100"></progress>
         <br/>
-        
-        </div>
-    </section>
-
-    <section>
+      </div>
+          <section>
+            <h4 class="title is-4 has-text-centered">Standings</h4>
+            <div class="titlesLine"></div>
+                <table class="table is-fullwidth">
+                    <thead>
+                    <tr>
+                        <th>Position</th>
+                        <th>Team</th>
+                        <th>Points</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr v-for="standing in standings" :key="standing.position">
+                        <td >{{standing.position}}</td>
+                        <td>{{standing.teamName}} </td>
+                        <td>{{standing.points}} </td>
+                    </tr>
+                    </tbody>
+                </table>
+        </section>
+      <section>
         <div>
-            <h4>Teams</h4>
+          <h4 class="title is-4 has-text-centered">Teams</h4>
+          <div class="titlesLine"></div>
+            <div>
+              <span v-for="team in teams" :key="team.permalink">
+                  <a v-bind:href="team.link">{{team.name}} | </a>
+              </span>
+            </div>
+          </div>
+      </section>
+    </div>
+
+
+
+
+
+
+  <section>
+        <div>
             <div>
                 <span v-for="team in teams" :key="team.permalink">
                     <a v-bind:href="team.link">{{team.name}} | </a>
@@ -20,7 +55,9 @@
             </div>
         </div>
     </section>
+
     <br/>
+
     <section>
         <div>
             <h1>Standings</h1>
@@ -31,8 +68,8 @@
             </ul>
         </div>
     </section>
-   
-  </div>
+      </div>
+
 </template>
 
 <script>
