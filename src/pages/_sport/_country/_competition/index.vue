@@ -1,14 +1,17 @@
 <template>
   <div class="row">
     <div class="column is-8 is-offset-2">
-      <div>
-        <h3 class="title is-4 has-text-centered">{{sport}}</h3>
+      <div style="padding:30px">
+        <h3 class="title is-4 has-text-centered is-uppercase">{{sport}}</h3>
       </div>
-      <div>
-        <div class="column is-3">Competition Logo
+      <div class="columns">
+        <div class="column is-3">
+          Competition Logo
+
+
            <img src=""/>
         </div>
-        <div class="column is-9 is-offset-3">
+        <div class="column is-9">
           <div class="title">{{title}}</div>
           <div class="subtitle">{{country}}</div>
         </div>
@@ -43,30 +46,16 @@
             <h4 class="title is-4 has-text-centered">Teams</h4>
             <div class="titlesLine"></div>
           </div>
-          <div class="columns is-mobile has-text-centered ">
-            <div class="column is-4" v-for="team in teams" :key="team.permalink"> 
-              <a v-bind:href="team.link">{{team.name}}</a>
-            </div> 
-          </div>   
+          <div v-for="(team, index) in teams" :key='index'>
+            <div v-if="index == 0 || index % 3 == 0" class="columns has-text-centered">
+              <div class="column is-4"><a v-bind:href="teams[index].link">{{ teams[index].name }}</a></div>
+              <div class="column is-4"><a v-bind:href="teams[index+1].link">{{ teams[index+1].name }}</a></div>
+              <div class="column is-4"><a v-bind:href="teams[index+2].link">{{ teams[index+2].name }}</a></div>
+            </div>
+          </div>
+            
         </section> 
-
-                  <!--Columns TEST-->
-                    <div class="columns is-desktop has-text-centered ">
-                      <div class="column">1</div>
-                      <div class="column">2</div>
-                      <div class="column">3</div>
-                    </div>
-                    <div class="columns is-desktop has-text-centered ">
-                      <div class="column">4</div>
-                      <div class="column">5</div>
-                      <div class="column">6</div>
-                    </div>
-                    <div class="columns is-desktop has-text-centered ">
-                      <div class="column">7</div>
-                      <div class="column">8</div>
-                      <div class="column">9</div>
-                    </div>
-                  <!--Columns TEST-->
+                  
           </div>  
             
 
@@ -137,7 +126,6 @@ export default {
         team.link = `/football/${country}/${competition}/${team.permalink}`;
       });
 
-
       return doc;
     });
   },
@@ -149,11 +137,10 @@ export default {
 </script>
 
 <style>
-a{
+a {
   color: black;
 }
-a:hover{
-  color: #68C3A3;
+a:hover {
+  color: #68c3a3;
 }
-
 </style>

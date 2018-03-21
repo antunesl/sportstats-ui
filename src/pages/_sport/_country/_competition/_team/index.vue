@@ -1,17 +1,24 @@
 <template>
   <div v-if="hasData == true">
       <div class="row">
-      <div class="column is-8 is-offset-2">
-        <progress class="progress is-success" value="60" max="100">60%</progress>
-        <div class="row">
-            <div class="column s-4">olaana</div>
-            <div class="column s-8">
+        <div class="column is-8 is-offset-2">
+            <div style="padding:30px">
+            <h3 class="title is-4 has-text-centered is-uppercase">{{sport}}</h3>
+        </div>
+        <div class="columns">
+            <div class="column is-2">
+                Team Logo
+            <img src=""/>
+            </div>
+            <div class="column s-10">
                 <h1 class="title is-1">{{title}}</h1>
                 <p class="subtitle is-3">{{teamInfo.city}}</p>
            </div>
-               <br/>
-                <h5>Manager: {{teamInfo.manager}}</h5>
-            </div>
+        </div>
+        <br>
+        <div class="columns">
+            <h5 class="title is-5">Manager: {{teamInfo.manager}}</h5>
+        </div>
         
  
         <section>
@@ -55,22 +62,16 @@
                 </table>
         </section>
         <section>
-<div id="root" class="container">
-  <tabs>
-    <tab name="About Us" :selected="true">
-      <h1>This part is about us
-      </h1>
-    </tab>
-    <tab name="About our culture">
-      <h1>This part is about our culture
-      </h1>
-    </tab>
-    <tab name="About our vision">
-      <h1>This part is about our vision
-      </h1>
-    </tab>
-  </tabs>
-</div>
+            <Tabs></Tabs>
+        <h4 class="title is-4 has-text-centered">Next Game</h4>
+            <div class="titlesLine"></div>
+            
+        <div class="tabs is-centered">
+            <ul>
+                <li class="is-active"><a>Home</a></li>
+                <li><a>Away</a></li>
+            </ul>
+            </div>
 
         </section>
 
@@ -141,11 +142,12 @@
   </div>
 </template>
 <script>
+
 import AppLogo from "~/components/AppLogo.vue";
 import axios from "~/plugins/axios";
 
 
-export default {
+export default {  
   components: {
     AppLogo,
   },
