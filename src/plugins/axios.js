@@ -5,11 +5,11 @@ let options = {}
 if (process.server) {
   var apiKeyValue = process.env.apiKey;
 
-  if (!apiKeyValue)
-    throw Error('ApiKey is not defined in configuration.');
+  // if (!apiKeyValue)
+  //   throw Error('ApiKey is not defined in configuration.');
   
   options.baseURL = `http://wigserver.myvnc.com:3000/api/`;
-  options.headers = { 'api_key': apiKeyValue };
+  // options.headers = { 'api_key': apiKeyValue };
 }
 
 export default axios.create(options)
