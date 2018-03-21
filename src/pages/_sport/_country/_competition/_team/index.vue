@@ -1,6 +1,6 @@
 <template>
   <div v-if="hasData == true">
-      <div class="row">
+      <div class="columns">
         <div class="column is-8 is-offset-2">
             <div style="padding:30px">
             <h3 class="title is-4 has-text-centered is-uppercase">{{sport}}</h3>
@@ -62,18 +62,13 @@
                 </table>
         </section>
         <section>
-            <Tabs></Tabs>
         <h4 class="title is-4 has-text-centered">Next Game</h4>
             <div class="titlesLine"></div>
-            
-        <div class="tabs is-centered">
-            <ul>
-                <li class="is-active"><a>Home</a></li>
-                <li><a>Away</a></li>
-            </ul>
-            </div>
-
         </section>
+        <section>
+            <Tabs></Tabs>
+        </section>
+ 
 
     </div>
       </div>
