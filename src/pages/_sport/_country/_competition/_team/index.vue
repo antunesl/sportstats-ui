@@ -16,15 +16,20 @@
            </div>
         </div>
         <br>
-        <div class="columns">
-            <h5 class="title is-5">Manager: {{teamInfo.manager}}</h5>
+        <section>
+        <div class="">
+            <h4 class="title is-4 is-uppercase has-text-centered" style="color:#68C3A3">Manager </h4>
+            <div class="lineManager"></div>
         </div>
-        
+        <div class="">
+             <h5 class="title is-5 is-uppercase has-text-centered">   {{teamInfo.manager}}</h5>
+        </div>
+        </section>
  
         <section>
             <h4 class="title is-4 has-text-centered">Squad</h4>
             <div class="titlesLine"></div>
-                <table class="table is-fullwidth">
+                <table class="table is-fullwidth squadTable">
                     <thead>
                     <tr>
                         <th>Number</th>
@@ -44,19 +49,20 @@
         <section>
             <h4 class="title is-4 has-text-centered">Top Scorers</h4>
             <div class="titlesLine"></div>
-                <table class="table is-fullwidth">
+            <br>
+                <table class="table is-fullwidth topScorers">
                     <thead>
                         <tr>
-                            <th>#</th>
+                            <th></th>
                             <th></th>
                             <th></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr v-for="player in topScorers" :key="player.name">
-                            <td >{{player.position}}</td>
-                            <td>{{player.name}}</td>
-                            <td style="padding-bottom: 3px;"><strong style="font-size: 35px;">{{player.goals}}</strong> Goals </td>
+                            <td class="topScorersTd" >{{player.position}}</td>
+                            <td class="topScorersTd">{{player.name}}</td>
+                            <td><strong style="font-size: 35px;">{{player.goals}} </strong>   Goals </td>
                         </tr>
                     </tbody>
                 </table>
@@ -65,10 +71,10 @@
         <h4 class="title is-4 has-text-centered">Next Game</h4>
             <div class="titlesLine"></div>
         </section>
-        <section>
+        <div>
             <br/>
             <Tabs></Tabs>
-        </section>
+        </div>
  
 
     </div>
@@ -206,7 +212,21 @@ export default {
 section{
     margin-top: 70px;
 }
-
+.squadTable tr td{
+    text-align: center;
+}
+.squadTable th{
+    text-align: center;
+}
+.topScorers tr td{
+    text-align: center;
+    border: 1px solid #eee;
+    border-right: none;
+    border-left: none;
+}
+.topScorersTd{
+    padding-top: 25px;
+}
 
 
 </style>

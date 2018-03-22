@@ -83,7 +83,6 @@ button.focus{
 }
 th, td{
     color: #999;
-    border: 1px solid #eee;
     padding: 12px 35px;
     border: none;
     text-align: center;
@@ -91,6 +90,6 @@ th, td{
 .green{
     background-color: green;
     overflow: hidden;
-height: 200px;
+    height: 200px;
 }
 </style>

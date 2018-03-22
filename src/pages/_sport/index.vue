@@ -1,34 +1,37 @@
 <template>
   <div>
-    <section class="container">
-        <div>
-        <div class="title">{{sport}}</div>
-        <br/>
-        </div>
-    </section>
 
+
+    <div class="hero is-primary">
+      <div class="hero-body">
+        <h3 class="title is-3 has-text-centered is-uppercase">{{sport}}</h3>
+      </div>
+    </div>
     <section>
-        <div>
-            <h4>Countries</h4>
-            <div>
-                <span v-for="country in countries" :key="country">
-                    <a v-bind:href="country.link">{{country.name}} | </a>
-                </span>
-            </div>
+        <div class="column is-8 is-offset-2">
+          <h4 class="title is-4">Countries</h4>
+          <div class="">
+            <a class="button" v-for="country in countries" :key="country" v-bind:href="country.link">
+                {{country.name}}
+            </a>
+          </div>
         </div>
     </section>
-    <br/>
     
+
+  <Footer></Footer>
   </div>
 </template>
 
 <script>
 import AppLogo from "~/components/AppLogo.vue";
 import axios from "~/plugins/axios";
+import Footer from "~/components/Footer.vue";
 
 export default {
   components: {
-    AppLogo
+    AppLogo,
+    Footer
   },
   asyncData(context) {
     var sport = context.params.sport;
@@ -53,6 +56,16 @@ export default {
 };
 </script>
 
-<style>
-
+<style scoped>
+section{
+    margin-top: 70px;
+}
+a.button{
+  width: 100%;
+  margin-bottom: 30px;
+}
+a{
+  color: black;
+}
 </style>
+

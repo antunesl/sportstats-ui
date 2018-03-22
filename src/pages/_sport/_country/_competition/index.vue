@@ -1,12 +1,12 @@
 <template>
-  <div class="row">
+  <div class="columns">
     <div class="column is-8 is-offset-2">
       <div style="padding:30px">
         <h3 class="title is-4 has-text-centered is-uppercase">{{sport}}</h3>
       </div>
       <div class="columns">
         <div class="column is-3">
-          Competition Logo
+          Competition Logoaa
 
 
            <img src=""/>
@@ -20,6 +20,8 @@
           <progress class="progress is-success" value="60" max="100"></progress>
           <br/>
       </div>
+
+
         <section>
           <h4 class="title is-4 has-text-centered">Standings</h4>
           <div class="titlesLine"></div>
@@ -41,6 +43,7 @@
           </table>
         </section>
         <br/>
+        
         <section>
           <div>
             <h4 class="title is-4 has-text-centered">Teams</h4>
@@ -54,54 +57,26 @@
             </div>
           </div>
             
-        </section> 
-                  
+        </section>        
       </div>  
             
 
 
+      
 
-        
-   
-
-
-
-<br/>
-<hr>
-<br/>
-  <section>
-        <div>
-            <div>
-                <span v-for="team in teams" :key="team.permalink">
-                    <a v-bind:href="team.link">{{team.name}} | </a>
-                </span>
-            </div>
-        </div>
-    </section>
-
-    <br/>
-
-    <section>
-        <div>
-            <h1>Standings</h1>
-            <ul>
-                <li v-for="standing in standings" :key="standing.position">
-                    {{standing.position}} {{standing.teamName}} [{{standing.points}} pts]
-                </li>
-            </ul>
-        </div>
-    </section>
-      </div>
+ </div>
 
 </template>
 
 <script>
 import AppLogo from "~/components/AppLogo.vue";
 import axios from "~/plugins/axios";
+import Footer from "~/components/Footer.vue";
 
 export default {
   components: {
-    AppLogo
+    AppLogo,
+    Footer
   },
   asyncData(context) {
     var sport = context.params.sport;

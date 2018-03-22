@@ -1,5 +1,5 @@
 <template>
-  <div class="row">
+  <div class="columns">
     <div class="column is-8 is-offset-2">
       <div style="padding:30px">
         <h3 class="title is-4 has-text-centered is-uppercase">{{sport}}</h3>
@@ -16,46 +16,19 @@
       <section>
         <h4 class="title is-4 has-text-centered">Competitions</h4>
         <div class="titlesLine"></div>
+        <br/>
         <div class="columns">
           <div class="column is-6 has-text-centered" v-for="competition in competitions" :key="competition.name">
             <a class="button is-outlined" v-bind:href="competition.link">{{competition.name}} </a>
           </div>
         </div>
       </section>
+     
+     
+
+     
     </div>
-
-
-<br/>
-
-<hr/>
-
-
-
-    <section class="container">
-        <div>
-        <h1>{{country}}</h1>
-        <h2>{{sport}}</h2>
-        <br/>
-        </div>
-    </section>
- 
-
-
-
- 
-    <section>
-        <div>
-            <h4>Competitions</h4>
-            <div>
-                <span v-for="competition in competitions" :key="competition.name">
-                    <a v-bind:href="competition.link">{{competition.name}} | </a>
-                </span>
-            </div>
-        </div>
-    </section>
-    
-  </div>
- 
+</div>
 </template>
 
 <script>
@@ -91,5 +64,11 @@ export default {
 </script>
 
 <style>
+section{
+    margin-top: 70px;
+}
+.button{
+  width: 60%;
+}
 
 </style>
