@@ -7,7 +7,8 @@
         </div>
     </footer>
 </template>
-<style scoped>
+
+<style>
     .footer{
         margin-top:50px;
     }

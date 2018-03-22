@@ -1,29 +1,29 @@
 <template>
-  <div class="columns">
-    <div class="column is-8 is-offset-2">
-      <div style="padding:30px">
-        <h3 class="title is-4 has-text-centered is-uppercase">{{sport}}</h3>
+  <div>
+    <div class="hero is-primary">
+      <div class="hero-body">
+        <h3 class="title is-3 has-text-centered is-uppercase" style="letter-spacing:2px">{{sport}}</h3>
       </div>
-      <div class="columns">
-        <div class="column is-3">
-          Competition Logoaa
-
-
-           <img src=""/>
+    </div>
+    <div class="column is-8 is-offset-2"> 
+      <section>
+        <div class="columns">
+          <div class="column is-3">
+              Competition Logo
+            <img src=""/>
+          </div>
+          <div class="column is-9">
+            <div class="title">{{title}}</div>
+            <div class="subtitle">{{country}}</div>
+          </div>
         </div>
-        <div class="column is-9">
-          <div class="title">{{title}}</div>
-          <div class="subtitle">{{country}}</div>
-        </div>
-      </div>
-      <div style="padding-top:30px; padding-bottom:30px">
+        <div style="padding-top:30px; padding-bottom:30px">
           <progress class="progress is-success" value="60" max="100"></progress>
-          <br/>
-      </div>
-
+        </div>
+      </section>
 
         <section>
-          <h4 class="title is-4 has-text-centered">Standings</h4>
+          <h4 class="title is-4 has-text-centered titlesStyle">standings</h4>
           <div class="titlesLine"></div>
           <table class="table is-fullwidth">
             <thead>
@@ -46,7 +46,7 @@
         
         <section>
           <div>
-            <h4 class="title is-4 has-text-centered">Teams</h4>
+            <h4 class="title is-4 has-text-centered titlesStyle">teams</h4>
             <div class="titlesLine"></div>
           </div>
           <div v-for="(team, index) in teams" :key='index'>
@@ -62,9 +62,11 @@
             
 
 
-      
+ 
+    <br>
 
- </div>
+    <Footer></Footer>
+  </div>
 
 </template>
 
@@ -112,6 +114,9 @@ export default {
 </script>
 
 <style>
+section{
+    margin-top: 70px;
+}
 a {
   color: black;
 }

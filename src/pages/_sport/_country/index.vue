@@ -1,20 +1,24 @@
 <template>
-  <div class="columns">
+  <div>
+    <div class="hero is-primary">
+      <div class="hero-body">
+        <h3 class="title is-3 has-text-centered is-uppercase" style="letter-spacing:2px">{{sport}}</h3>
+      </div>
+    </div>
     <div class="column is-8 is-offset-2">
-      <div style="padding:30px">
-        <h3 class="title is-4 has-text-centered is-uppercase">{{sport}}</h3>
-      </div>
-      <div class="columns">
-        <div class="column is-2">
-          Country Logo
-           <img src=""/>
-        </div>
-        <div class="column is-10">
-          <div class="title">{{country}}</div>
-        </div>
-      </div>
       <section>
-        <h4 class="title is-4 has-text-centered">Competitions</h4>
+        <div class="columns">
+          <div class="column is-2">
+            Country Logo
+            <img src=""/>
+          </div>
+          <div class="column is-10">
+            <div class="title">{{country}}</div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h4 class="title is-4 has-text-centered titlesStyle">competitions</h4>
         <div class="titlesLine"></div>
         <br/>
         <div class="columns">
@@ -23,21 +27,30 @@
           </div>
         </div>
       </section>
-     
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
      
 
-     
     </div>
-</div>
+    <br>
+
+    <Footer></Footer>
+  </div>
 </template>
 
 <script>
 import AppLogo from "~/components/AppLogo.vue";
 import axios from "~/plugins/axios";
+import Footer from "~/components/Footer.vue";
 
 export default {
   components: {
-    AppLogo
+    AppLogo,
+    Footer
   },
   asyncData(context) {
     var sport = context.params.sport;
@@ -70,5 +83,4 @@ section{
 .button{
   width: 60%;
 }
-
 </style>

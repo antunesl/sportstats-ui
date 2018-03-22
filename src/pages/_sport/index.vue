@@ -1,15 +1,13 @@
 <template>
   <div>
-
-
     <div class="hero is-primary">
       <div class="hero-body">
-        <h3 class="title is-3 has-text-centered is-uppercase">{{sport}}</h3>
+        <h3 class="title is-3 has-text-centered is-uppercase" style="letter-spacing:2px">{{sport}}</h3>
       </div>
     </div>
     <section>
         <div class="column is-8 is-offset-2">
-          <h4 class="title is-4">Countries</h4>
+          <h4 class="title is-4 titlesStyle">countries</h4>
           <div class="">
             <a class="button" v-for="country in countries" :key="country" v-bind:href="country.link">
                 {{country.name}}

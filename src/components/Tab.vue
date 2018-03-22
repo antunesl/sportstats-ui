@@ -29,22 +29,26 @@
                 </div>
                     
                 <div v-show="currentTab === 1">
-                    <table class="table is-fullwidth">
-                        <tbody>
-                            <tr v-for="player in this.$parent.nextGame.lineup.away" :key="player.name">
-                                <td >{{player.left}}</td>
-                                <td>{{player.right}}</td>
-                                <td>{{player.top}}</td>
-                                <td>{{player.name}}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div class="green">
-                        <h5 class="title is-5">Away News</h5>
-                        <p v-for="player in this.$parent.nextGame.news.away" :key="player.text">
-                            {{player.text}}
-                        </p>  
-                    </div>
+                    <section>
+                        <table class="table is-fullwidth">
+                            <tbody>
+                                <tr v-for="player in this.$parent.nextGame.lineup.away" :key="player.name">
+                                    <td >{{player.left}}</td>
+                                    <td>{{player.right}}</td>
+                                    <td>{{player.top}}</td>
+                                    <td>{{player.name}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <section>
+                        <div class="green">
+                            <h5 class="title is-5">Away News</h5>
+                            <p v-for="player in this.$parent.nextGame.news.away" :key="player.text">
+                                {{player.text}}
+                            </p>  
+                        </div>
+                    </section>
                 </div>
             </div>
         </div>
@@ -89,7 +93,6 @@ th, td{
 }
 .green{
     background-color: green;
-    overflow: hidden;
     height: 200px;
 }
 </style>
