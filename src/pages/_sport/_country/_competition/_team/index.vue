@@ -66,6 +66,7 @@
             <div class="titlesLine"></div>
         </section>
         <section>
+            <br/>
             <Tabs></Tabs>
         </section>
  
@@ -201,7 +202,10 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
+section{
+    margin-top: 70px;
+}
 
 
 
