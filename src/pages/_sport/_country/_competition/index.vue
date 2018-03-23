@@ -8,7 +8,7 @@
     <div class="column is-8 is-offset-2"> 
       <section>
         <div class="columns">
-          <div class="column is-3">
+          <div class="column is-2">
               Competition Logo
             <img src=""/>
           </div>
@@ -25,19 +25,19 @@
         <section>
           <h4 class="title is-4 has-text-centered titlesStyle">standings</h4>
           <div class="titlesLine"></div>
-          <table class="table is-fullwidth">
+          <table class="table is-fullwidth squadTable">
             <thead>
               <tr>
                 <th>Position</th>
                 <th>Team</th>
-                <th style="text-align: right;">Points</th>
+                <th>Points</th>
               </tr>
             </thead>
             <tbody>
               <tr v-for="standing in standings" :key="standing.position">
                   <td >{{standing.position}}</td>
                   <td>{{standing.teamName}} </td>
-                  <td style="text-align: right;">{{standing.points}} </td>
+                  <td>{{standing.points}} </td>
               </tr>
             </tbody>
           </table>
@@ -122,5 +122,11 @@ a {
 }
 a:hover {
   color: #68c3a3;
+}
+.squadTable tr td{
+    text-align: center;
+}
+.squadTable th{
+    text-align: center;
 }
 </style>

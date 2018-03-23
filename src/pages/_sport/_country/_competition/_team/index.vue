@@ -5,7 +5,9 @@
                 <div class="hero-body">
                 </div>
             </div>
+            
             <div class="column is-8 is-offset-2"> 
+                <breadcrumb></breadcrumb>
                 <section>
                     <div class="columns">
                         <div class="column is-2">
@@ -56,7 +58,7 @@
                         <table class="table is-fullwidth topScorers">
                             <thead>
                                 <tr>
-                                    <th></th>
+                                    <th>#</th>
                                     <th></th>
                                     <th></th>
                                 </tr>
@@ -101,13 +103,15 @@ import AppLogo from "~/components/AppLogo.vue";
 import axios from "~/plugins/axios";
 import Tabs from "~/components/Tab.vue";
 import Footer from "~/components/Footer.vue";
+import Breadcrumb from "~/components/Breadcrumb.vue";
 
 
 export default {  
   components: {
     AppLogo,
     Tabs,
-    Footer
+    Footer,
+    Breadcrumb
   },
   asyncData(context) {
     var country = context.params.country;
@@ -146,7 +150,9 @@ export default {
           }
         }
       };
-      
+  
+       
+ 
 
       return doc;
     });
@@ -180,6 +186,9 @@ section{
 }
 .topScorersTd{
     padding-top: 25px;
+}
+.topScorers th{
+    text-align: center;
 }
 
 
