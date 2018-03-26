@@ -46,6 +46,7 @@
 import AppLogo from "~/components/AppLogo.vue";
 import axios from "~/plugins/axios";
 import Footer from "~/components/Footer.vue";
+import Breadcrumb from "~/components/Breadcrumb.vue";
 
 export default {
   components: {

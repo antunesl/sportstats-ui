@@ -22,9 +22,9 @@
                     </table>
                     <div class="green">
                         <h5 class="title is-5">Home News</h5>
-                        <p v-for="player in this.$parent.nextGame.news.home" :key="player.text">
+                        <div style="white-space: normal;" v-for="player in this.$parent.nextGame.news.home" :key="player.text">
                             {{player.text}}
-                        </p>  
+                        </div>  
                     </div>
                 </div>
                     
@@ -44,9 +44,9 @@
                     <section>
                         <div class="green">
                             <h5 class="title is-5">Away News</h5>
-                            <p v-for="player in this.$parent.nextGame.news.away" :key="player.text">
+                            <div style="white-space: normal;" v-for="player in this.$parent.nextGame.news.away" :key="player.text">
                                 {{player.text}}
-                            </p>  
+                            </div>  
                         </div>
                     </section>
                 </div>
