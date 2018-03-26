@@ -6,6 +6,7 @@
       </div>
     </div>
     <div class="column is-8 is-offset-2"> 
+      <breadcrumb></breadcrumb>
       <section>
         <div class="columns">
           <div class="column is-2">
@@ -79,7 +80,8 @@ import Breadcrumb from "~/components/Breadcrumb.vue";
 export default {
   components: {
     AppLogo,
-    Footer
+    Footer,
+    Breadcrumb
   },
   asyncData(context) {
     var sport = context.params.sport;

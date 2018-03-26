@@ -7,6 +7,7 @@
     </div>
     <section>
         <div class="column is-8 is-offset-2">
+          <breadcrumb></breadcrumb>
           <h4 class="title is-4 titlesStyle">countries</h4>
           <div class="">
             <a class="button" v-for="country in countries" :key="country" v-bind:href="country.link">
@@ -30,7 +31,8 @@ import Breadcrumb from "~/components/Breadcrumb.vue";
 export default {
   components: {
     AppLogo,
-    Footer
+    Footer,
+    Breadcrumb,
   },
   asyncData(context) {
     var sport = context.params.sport;

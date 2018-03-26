@@ -12,6 +12,7 @@
   </div>
 </div>
     <section class="container">
+      <breadcrumb></breadcrumb>
       <br>
       <br>
       <h4 class="title is-4 has-text-centered titlesStyle">sports</h4>
@@ -28,11 +29,13 @@
 <script>
 import AppLogo from '~/components/AppLogo.vue';
 import Footer from "~/components/Footer.vue";
+import Breadcrumb from "~/components/Breadcrumb.vue";
 
 export default {
   components: {
     AppLogo,
-    Footer
+    Footer,
+    Breadcrumb
   }
 }
 </script>

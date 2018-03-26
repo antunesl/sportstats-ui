@@ -111,7 +111,7 @@ export default {
     AppLogo,
     Tabs,
     Footer,
-    Breadcrumb
+    Breadcrumb,
   },
   asyncData(context) {
     var country = context.params.country;
