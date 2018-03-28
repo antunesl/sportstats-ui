@@ -20,7 +20,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    <div class="green">
+                    <div>
                         <h5 class="title is-5">Home News</h5>
                         <div style="white-space: normal;" v-for="player in this.$parent.nextGame.news.home" :key="player.text">
                             {{player.text}}
@@ -42,7 +42,7 @@
                         </table>
                     </section>
                     <section>
-                        <div class="green">
+                        <div>
                             <h5 class="title is-5">Away News</h5>
                             <div style="white-space: normal;" v-for="player in this.$parent.nextGame.news.away" :key="player.text">
                                 {{player.text}}
