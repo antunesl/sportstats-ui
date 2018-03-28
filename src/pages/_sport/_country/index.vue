@@ -61,6 +61,11 @@ export default {
     // called every time before loading the component
     return axios.get(`/countries/${country}/competitions`).then(res => {
       var doc = {
+        hasBreadcrumbData: true,
+        breadcrumbData: {
+          country: country,
+          countryLink: "/football/" + country,
+        },
         country: country,
         sport: sport,
         competitions: res.data.result.docs.sort(function(a,b) {return (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0);} ),

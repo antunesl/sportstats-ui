@@ -90,6 +90,14 @@ export default {
     // called every time before loading the component
     return axios.get(`/leagues/${competition}`).then(res => {
       var doc = {
+        hasBreadcrumbData: true,
+        breadcrumbData: {
+          country: country,
+          countryLink: "/football/" + country,
+          competition: res.data.result.name,
+          competitionLink: "/football/" + country + "/" + competition,
+        },
+
         sport: sport,
         country: res.data.result.country,
         title: res.data.result.name,
@@ -117,8 +125,8 @@ export default {
 </script>
 
 <style>
-section{
-    margin-top: 70px;
+section {
+  margin-top: 70px;
 }
 a {
   color: black;
@@ -126,10 +134,10 @@ a {
 a:hover {
   color: #68c3a3;
 }
-.squadTable tr td{
-    text-align: center;
+.squadTable tr td {
+  text-align: center;
 }
-.squadTable th{
-    text-align: center;
+.squadTable th {
+  text-align: center;
 }
 </style>

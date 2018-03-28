@@ -98,20 +98,18 @@
 
 
 <script>
-
 import AppLogo from "~/components/AppLogo.vue";
 import axios from "~/plugins/axios";
 import Tabs from "~/components/Tab.vue";
 import Footer from "~/components/Footer.vue";
 import Breadcrumb from "~/components/Breadcrumb.vue";
 
-
-export default {  
+export default {
   components: {
     AppLogo,
     Tabs,
     Footer,
-    Breadcrumb,
+    Breadcrumb
   },
   asyncData(context) {
     var country = context.params.country;
@@ -119,10 +117,21 @@ export default {
     var team = context.params.team;
     // called every time before loading the component
     return axios.get(`/teams/${team}`).then(res => {
-      
       if (!res.data.success || !res.data.result) return { hasData: false };
 
+    console.log(res.data.result);
+
       var doc = {
+        hasBreadcrumbData: true,
+        breadcrumbData: {
+            country: country,
+            countryLink: '/football/' + country,
+            competition: res.data.result.actualCompetitionName,
+            competitionLink: '/football/' + country + '/' + competition,
+            team: res.data.result.name,
+            teamLink: '/football/' + country + '/' + competition + '/' + team
+        },
+
         hasData: true,
         title: `${res.data.result.name}`,
 
@@ -150,9 +159,6 @@ export default {
           }
         }
       };
-  
-       
- 
 
       return doc;
     });
@@ -162,34 +168,28 @@ export default {
     return true;
   }
 };
-
-
-
-
 </script>
 
 <style scoped>
-section{
-    margin-top: 70px;
+section {
+  margin-top: 70px;
 }
-.squadTable tr td{
-    text-align: center;
+.squadTable tr td {
+  text-align: center;
 }
-.squadTable th{
-    text-align: center;
+.squadTable th {
+  text-align: center;
 }
-.topScorers tr td{
-    text-align: center;
-    border: 1px solid #eee;
-    border-right: none;
-    border-left: none;
+.topScorers tr td {
+  text-align: center;
+  border: 1px solid #eee;
+  border-right: none;
+  border-left: none;
 }
-.topScorersTd{
-    padding-top: 25px;
+.topScorersTd {
+  padding-top: 25px;
 }
-.topScorers th{
-    text-align: center;
+.topScorers th {
+  text-align: center;
 }
-
-
 </style>
