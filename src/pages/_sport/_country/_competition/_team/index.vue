@@ -11,8 +11,7 @@
                 <section>
                     <div class="columns">
                         <div class="column is-2">
-                            Team Logo
-                        <img src="https://upload.wikimedia.org/wikipedia/en/4/46/Doncaster_Rovers_FC.png"/>
+                            <img :src="`${logoLink}`"/>
                         </div>
                         <div class="column s-10">
                             <div class="title">{{title}}</div>
@@ -119,22 +118,22 @@ export default {
     return axios.get(`/teams/${team}`).then(res => {
       if (!res.data.success || !res.data.result) return { hasData: false };
 
-    console.log(res.data.result);
+      console.log(res.data.result);
 
       var doc = {
         hasBreadcrumbData: true,
         breadcrumbData: {
-            country: country,
-            countryLink: '/football/' + country,
-            competition: res.data.result.actualCompetitionName,
-            competitionLink: '/football/' + country + '/' + competition,
-            team: res.data.result.name,
-            teamLink: '/football/' + country + '/' + competition + '/' + team
+          country: country,
+          countryLink: "/football/" + country,
+          competition: res.data.result.actualCompetitionName,
+          competitionLink: "/football/" + country + "/" + competition,
+          team: res.data.result.name,
+          teamLink: "/football/" + country + "/" + competition + "/" + team
         },
 
         hasData: true,
         title: `${res.data.result.name}`,
-
+        logoLink: res.data.result.logoLink,
         country: country,
         competition: competition,
 
