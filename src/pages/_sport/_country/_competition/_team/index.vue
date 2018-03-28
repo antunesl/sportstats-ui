@@ -12,7 +12,7 @@
                     <div class="columns">
                         <div class="column is-2">
                             Team Logo
-                        <img src=""/>
+                        <img src="https://upload.wikimedia.org/wikipedia/en/4/46/Doncaster_Rovers_FC.png"/>
                         </div>
                         <div class="column s-10">
                             <div class="title">{{title}}</div>
